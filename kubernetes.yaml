@@ -1,0 +1,9 @@
+- name: Common hosts config
+  hosts: all
+  become_user: root
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: common
+    - role: docker
+    - role: kubernetes-installed

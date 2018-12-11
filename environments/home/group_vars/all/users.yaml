@@ -1,0 +1,10 @@
+users:
+   - name: admin
+     username: admin
+     key:
+       active:
+         - "ssh-rsa some key"
+       disabled:
+         - "ssh-rsa another key"
+     shell: "/bin/bash"
+     state: present
