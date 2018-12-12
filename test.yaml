@@ -1,0 +1,23 @@
+- hosts: localhost
+  gather_facts: no
+  vars:
+    users:
+      - name: Smith
+        hosts:
+          - vagrant
+          - home
+          - kubernetes-home
+      - name: Sanders
+        hosts:
+          - kubernetes-homea
+            #    current_environment: vagrant
+
+  tasks:
+    - name: Users List
+      debug:
+        msg: "inventroy_hostname={{ inventory_hostname }} . User={{ item.name }} user hosts={{ item.hosts }} current_groups={{ group_names }}. {{ (item.hosts | intersect(group_names) | length) }}"
+      when: (item.hosts | intersect(group_names) | length) > 0 or inventory_hostname in item.hosts
+      with_items:
+        - "{{ users }}"
+#        - hosts
+     

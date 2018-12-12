@@ -1,0 +1,6 @@
+[home:children]
+kubernetes-home
+
+[kubernetes-home]
+kmaster.example.com
+localhost
